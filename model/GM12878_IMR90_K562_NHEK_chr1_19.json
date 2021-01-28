@@ -1,0 +1,7 @@
+{
+    "use_dist": false,
+    "s_cnn_size": [5], "s_cnn_num": [32], "s_cnn_pool": [3],
+    "s_lstm_size": 64, "s_lstm_layer": 2, "s_droprate": 0.2,
+    "s_da": 64, "s_r": 20,
+    "fc_size": [32], "fc_dr": 0.2
+}

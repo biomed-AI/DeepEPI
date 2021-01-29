@@ -19,8 +19,14 @@ This repository contains the scripts, data, and trained models for DeepEPI. Deep
 # Usage
 
 ```bash
-./run_deepepi.sh input outdir
+./run_deepepi.sh $input $outdir
 ```
+## Input
+
+
+## Output
+The output will be saved at `$outdir/results`
+
 
 ## Demo
 
@@ -30,3 +36,4 @@ This repository contains the scripts, data, and trained models for DeepEPI. Deep
 
 
 For questions about the datasets and code, please contact [chenkenbio@gmail.com](mailto:chenkenbio@gmail.com).
+

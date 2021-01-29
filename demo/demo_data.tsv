@@ -1,4 +1,4 @@
-##CELLTYPE Liver
+##CELLTYPE FetalBrainFemale
 ##MODEL epi
 #chrom enhancer promoter
 chr10 49875920-49876712 50396056-50398056

@@ -25,11 +25,12 @@ ${basedir}/src/prepare_data.py -d $outdir \
    --segment-dist --segment-mark \
    --segment-bigwig $dnase_config $h3k27ac_config $h3k4me1_config $h3k4me3_config \
    --segment-bed $ctcf_config \
-   --segment-dist -t 4
+   --segment-dist -t 1
 
 ${basedir}/src/predict.py -t $outdir  \
     -m ./model/GM12878_IMR90_K562_NHEK_chr1_19.model \
-    -c ./model/GM12878_IMR90_K562_NHEK_chr1_19.config
+    -c ./model/GM12878_IMR90_K562_NHEK_chr1_19.json \
+    -o ${outdir}
 
 # usage: prepare_data.py [-h] -d DATA_DIR --name NAME [--metadata]
 #                        [--segment-bigwig SEGMENT_BIGWIG [SEGMENT_BIGWIG ...]]

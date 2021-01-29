@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import argparse, os, sys
+import argparse, os, sys, json
 import numpy as np
 
 from variables import *
@@ -16,6 +16,18 @@ def make_directory(in_dir):
     return outdir
 
 
+class Celltype(object):
+    def __init__(self, config):
+        self.config = os.path.realpath(config)
+        self.dict = json.load(open(self.config))
+    def __call__(self, in_type):
+        if in_type in self.dict.keys():
+            out_type = self.dict[in_type]
+        else:
+            out_type = in_type
+        return out_type
+
+
 def get_args():
     p = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument('input')
@@ -24,6 +36,7 @@ def get_args():
     p.add_argument('--buildver', default="hg19", choices=('hg19', 'hg38'))
     p.add_argument('--bw-config', nargs='+', default=None)
     p.add_argument('--interval-len', default=3000000, type=int)
+    p.add_argument('--cell-config', default="/home/chenken/Documents/DeepEPI/config/celltypes.json")
     # p.add_argument('--bin0size', default=1000, type=int)
     #p.add_argument('--seed', type=int, default=2020)
     return p.parse_args()
@@ -35,11 +48,13 @@ if __name__ == "__main__":
     args = get_args()
     #np.random.seed(args.seed)
     chroms, enhancers, promoters = list(), list(), list()
+    cell_mapper = Celltype(args.cell_config)
     with open(args.input) as infile:
         for l in infile:
             if l.startswith("##"):
                 if l.startswith("##CELLTYPE"):
                     celltype = l.strip().split()[1]
+                    celltype = cell_mapper(celltype)
                 elif l.startswith("##MODEL"):
                     model_name = l.strip().split()[1]
                     assert model_name.lower() in available_models.keys()
@@ -75,5 +90,5 @@ if __name__ == "__main__":
                 shift = 0
             sl = mid + shift - args.interval_len // 2
             sr = sl + args.interval_len
-            out.write("{}\t{}\t{}\t{}|{}|{},{}\n".format(c, promoters[i], promoters[i] + 1, celltype, c, enhancers[i], promoters[i]))
+            out.write("{}\t{}\t{}\t{}|{}|{},{}\n".format(c, sl, sr, celltype, c, enhancers[i], promoters[i]))
 

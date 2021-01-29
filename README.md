@@ -49,5 +49,14 @@ The output will be saved at `/path/to/output/directory/results.txt`
 ./run_deepepi.sh demo/demo_data.tsv output/demo
 ```
 
+## model
+The model `model/GM12878_IMR90_K562_NHEK_chr1_19.json` was trained on samples from GM12878, IMR90, K562, and NHEK. Only the pairs on chr1-chr19 were used.
+
+# Datasets
+
+All the datasets used in this study are available at `data/dataset`
+
+
+# Questions
 For questions about the datasets and code, please contact [chenkenbio@gmail.com](mailto:chenkenbio@gmail.com).
 

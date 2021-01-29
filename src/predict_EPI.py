@@ -95,7 +95,7 @@ def predict(model, test_data, device, sample_idxs='all', batch_size=128, evaluat
 def get_args():
     p = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument('-t', "--data_dirs", required=True, nargs='+')
-    p.add_argument('-m', "--model", required=True, choices=("EPI", "LOOP"), help="Use model state dict")
+    p.add_argument('-m', "--model", required=True, choices=("EPI"), help="Use model state dict")
     p.add_argument('-gf', "--global-features", default=["segment.mark_3", "segment.ep.pos-encode", "segment.CTCF.arcsinh", "segment.DNase-pval.arcsinh", "segment.H3K27ac-pval.arcsinh", "segment.H3K4me1-pval.arcsinh", "segment.H3K4me3-pval.arcsinh"], nargs='+', help="DeepEPI features")
     p.add_argument('-b', "--batch-size", default=128, type=int, help="batch size")
     p.add_argument('-o', '--output', help="Write prediction", required=True)

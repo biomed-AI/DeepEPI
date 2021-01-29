@@ -58,41 +58,10 @@ def prepare_metadata(name, data_dir):
     dist = (e_start + e_end - p_start - p_end) // 2
     dist = np.log10(1 + abs(dist) / 100000)
     up_down = (e_end < p_start).astype(np.int8)
-    np.savez_compressed(save_name, celltype=celltypes, label=labels, chrom=chroms, e_name=e_names, p_name=p_names, e_start=e_start, e_end=e_end, p_start=p_start, p_end=p_end, up_down=up_down, dist=dist)
+    # np.savez_compressed(save_name, celltype=celltypes, label=labels, chrom=chroms, e_name=e_names, p_name=p_names, e_start=e_start, e_end=e_end, p_start=p_start, p_end=p_end, up_down=up_down, dist=dist)
+    np.savez_compressed(save_name, celltype=celltypes, chrom=chroms, e_name=e_names, p_name=p_names, e_start=e_start, e_end=e_end, p_start=p_start, p_end=p_end, up_down=up_down, dist=dist)
     print("- {} saved at {}".format(save_name, time.asctime()))
 
-
-def prepare_sequence(name, data_dir):
-    print("Processing sequence {} ... ({})".format(data_dir, time.asctime()))
-    save_name_AGCT = "%s/%s_sequences.npz" % (data_dir.rstrip('/'), name)
-    save_name_WS = "%s/%s_sequences.WS.npz" % (data_dir.rstrip('/'), name)
-    if os.path.exists(save_name_AGCT) and os.path.exists(save_name_WS):
-        print("- {} exists, skipped".format(save_name_AGCT))
-        return None
-    enhancers, promoters = list(), list()
-    with gzip.open("%s/%s_enhancer.fa.gz" % (data_dir, name), 'rt') as infile:
-        for l in infile:
-            if l.startswith('#') or l.startswith('>'):
-                continue
-            enhancers.append(one_hot(l.strip()))
-    enhancers = np.array(enhancers).astype(np.float16)
-    with gzip.open("%s/%s_promoter.fa.gz" % (data_dir, name), 'rt') as infile:
-        for l in infile:
-            if l.startswith('#') or l.startswith('>'):
-                continue
-            promoters.append(one_hot(l.strip()))
-    promoters = np.array(promoters).astype(np.float16)
-    np.savez_compressed(save_name_AGCT, enhancer=enhancers, promoter=promoters)
-    print("- {} saved. {}".format(save_name_AGCT, time.asctime()))
-    enhancers_WS = np.concatenate((enhancers[:,[0,3],:].sum(axis=1, keepdims=True), 
-                                   enhancers[:,[1,2],:].sum(axis=1, keepdims=True)),
-                                   axis=1)
-    promoters_WS = np.concatenate((promoters[:,[0,3],:].sum(axis=1, keepdims=True), 
-                                   promoters[:,[1,2],:].sum(axis=1, keepdims=True)),
-                                   axis=1)
-    np.savez_compressed(save_name_WS, enhancer=enhancers_WS, promoter=promoters_WS)
-    print("- {} saved. {}".format(save_name_AGCT, time.asctime()))
-    print("- {} saved. {}".format(save_name_WS, time.asctime()))
 
 def parse_segment_mark(s_starts, s_ends, e_mids, p_mids, bin_size=1000, bin_num=3000):
     samples_channels_length = list()
@@ -371,16 +340,16 @@ def prepare_segment_bw_signals(name, data_dir, bw_config, bin_size=1000, bin_num
 
 
 def load_dataset(data_dir, global_features=None, min_memory_GB=4):
-    import psutil
-    BytePerGB = 1073741824
+    # import psutil
+    # BytePerGB = 1073741824
     time_cnt = 0
-    while psutil.virtual_memory().available < min_memory_GB * BytePerGB:
-        if time_cnt % 600 == 0:
-            print("* Waiting for memory ... {}".format(time.asctime()))
-        time.sleep(120)
-        time_cnt += 120
-    if psutil.virtual_memory().available / BytePerGB < 32:
-        print("* Warning: available memory is less than 32GB ({:.2f}GB)".format(psutil.virtual_memory().available / BytePerGB))
+    # while psutil.virtual_memory().available < min_memory_GB * BytePerGB:
+    #     if time_cnt % 600 == 0:
+    #         print("* Waiting for memory ... {}".format(time.asctime()))
+    #     time.sleep(120)
+    #     time_cnt += 120
+    # if psutil.virtual_memory().available / BytePerGB < 32:
+    #     print("* Warning: available memory is less than 32GB ({:.2f}GB)".format(psutil.virtual_memory().available / BytePerGB))
 
     data_dir = data_dir.rstrip('/')
     try:
@@ -389,13 +358,12 @@ def load_dataset(data_dir, global_features=None, min_memory_GB=4):
         print("* ERROR: metadata not found under {}".format(data_dir))
         exit(1)
     name = fn.split('/')[-1].split('_')[0]
-    local_features =  list() 
     metadata = np.load("%s/%s_metadata.npz" % (data_dir, name), allow_pickle=True)
     # label = metadata['label'].astype(np.int8).reshape(-1, 1) if metadata['label'] is not None else None
     chrom = metadata['chrom'].reshape(-1, 1)
     dist = metadata['dist'].reshape(-1, 1)
     up_down = metadata['up_down'].reshape(-1)
-    enhancer, promoter, segment = None, None, None
+    segment = None, None, None
     if global_features is not None:
         for i, fn in enumerate(global_features):
             print("{}/{}_{}.npz".format(data_dir, name, fn))
@@ -406,11 +374,15 @@ def load_dataset(data_dir, global_features=None, min_memory_GB=4):
             if i == 0:
                 segment = s
             else:
-                segment = np.concatenate((segment, s), axis=1)
-    dataset = {"label": label, "dist": dist,
+                try:
+                    segment = np.concatenate((segment, s), axis=1)
+                except:
+                    print(fn)
+                    print(s)
+                    print(segment)
+    # dataset = {"label": None, "dist": dist,
+    dataset = {"dist": dist,
             "chrom": chrom, "up_down": up_down,
-            "enhancer": enhancer, 
-            "promoter": promoter, 
             "segment": segment}
     return dataset
 

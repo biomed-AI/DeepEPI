@@ -31,11 +31,13 @@ The input file should be formatted as:
 
 ```
 ##CELLTYPE [cell type]
-##MODEL [model name]
+##BUILDVER [build version]
 #chrom enhancer promoter
 chr10 49875920-49876712 50396056-50398056
 chr10	49874816-49877816	49874816-49877816
 ```
+
+build version: GRCh37/hg19/GRCh38/hg38
 
 
 ## Output

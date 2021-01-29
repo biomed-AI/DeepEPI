@@ -22,35 +22,30 @@ The users should edit the json files in `config/` to specify the location of the
 # Usage
 
 ```bash
-./run_deepepi.sh $input $outdir
+./run_deepepi.sh /path/to/query/file /path/to/output/directory
 ```
-
-- `input`: input file
-- `outdir`: output directory
 
 ## Input
 
 The input file should be formatted as:
 
 ```
-    ##CELLTYPE [cell type]
-    ##MODEL [model name]
-    #chrom enhancer promoter
-    chr10 49875920-49876712 50396056-50398056
-    chr10	49874816-49877816	49874816-49877816
+##CELLTYPE [cell type]
+##MODEL [model name]
+#chrom enhancer promoter
+chr10 49875920-49876712 50396056-50398056
+chr10	49874816-49877816	49874816-49877816
 ```
 
 
 ## Output
-The output will be saved at `$outdir/results.txt`
-
+The output will be saved at `/path/to/output/directory/results.txt`
 
 ## Demo
 
 ```bash
 ./run_deepepi.sh demo/demo_data.tsv output/demo
 ```
-
 
 For questions about the datasets and code, please contact [chenkenbio@gmail.com](mailto:chenkenbio@gmail.com).
 

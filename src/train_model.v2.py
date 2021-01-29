@@ -11,13 +11,12 @@ from sklearn.model_selection import GroupKFold
 import matplotlib.pyplot as plt
 
 import EPI_misc
-import biock.biock as biock
 from biock.idle_gpu import idle_gpu
 from EPI_misc import max_indexes, min_indexes, evaluate_results, tensor2numpy, draw_loss_auc
 from EPIGL import EPIGL
 import prepare_data
 
-from biock.biock import print
+from biock import print
 
 
 def flip_DNA_feature(ar, reverse_intervals=None, require_flip=False):

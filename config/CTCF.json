@@ -1,0 +1,202 @@
+{
+    "selected": ["CTCF"],
+    "all_assays": ["CTCF", "DNase", "H3K27ac", "H3K27me3", "H3K36me3", "H3K4me1", "H3K4me2", "H3K4me3", "H3K79me2", "H3K9ac",  "H3K9me3", "H4K20me1"],
+    "dbname": "CTCF",
+    "norm": "arcsinh",
+    "location": "/home/chenken/Documents/DeepEPI/data/genomic_data",
+    "celltypes": {
+        "FetalBrainMale": {
+            "CTCF": "ENCFF618DDO.bed.gz",
+            "comment":""
+        },
+        "FetalBrainFemale": {
+            "CTCF": "ENCFF618DDO.bed.gz",
+            "comment":""
+        },
+        "H1NPC": {
+            "CTCF": "ENCFF402JJK.bed.gz"
+        },
+        "H9NPC": {
+            "CTCF": "ENCFF072ZEU.bed.gz"
+        },
+        "HMEC": {
+            "CTCF": "ENCFF288RFS.bed.gz",
+            "DNase": "ENCFF672BMB.bed.gz",
+            "H3K27ac": "ENCFF360PVA.bed.gz",
+            "H3K27me3": "ENCFF028RTA.bed.gz",
+            "H3K36me3": "ENCFF416PHD.bed.gz",
+            "H3K4me1": "ENCFF609RVI.bed.gz",
+            "H3K4me3": "ENCFF014CWM.bed.gz",
+            "H3K9me3": "ENCFF851QJD.bed.gz"
+        },
+        "A549": {
+            "CTCF": "ENCFF300IYQ.bed.gz",
+            "DNase": "ENCFF475BVB.bed.gz",
+            "POLR2A": "ENCFF002DAE.bed.gz",
+            "H3K27ac": "ENCFF147VYF.bed.gz",
+            "H3K27me3": "ENCFF975TXL.bed.gz",
+            "H3K36me3": "GSM1003494_hg19_wgEncodeBroadHistoneA549H3k36me3Dex100nmPk.broadPeak.gz",
+            "H3K4me1": "ENCFF557FXL.bed.gz",
+            "H3K4me3": "ENCFF558VNZ.bed.gz",
+            "H3K9me3": "ENCFF136CFI.bed.gz"
+        },
+        "HepG2": {
+            "CTCF": "ENCFF237OKO.bed.gz",
+            "DNase": "ENCFF209DJG.hg38-hg19.bed.gz",
+            "POLR2A": "ENCFF992LSQ.bed.gz",
+            "H3K27ac": "ENCFF825NBZ.bed.gz",
+            "H3K27me3": "ENCFF042EDV.bed.gz",
+            "H3K36me3": "ENCFF475TMV.bed.gz",
+            "H3K4me1": "ENCFF428FAW.bed.gz",
+            "H3K4me3": "ENCFF632WJV.bed.gz",
+            "H3K9me3": "ENCFF533JQH.bed.gz"
+        },
+        "GM12878": {
+                "CTCF": "wgEncodeAwgTfbsBroadGm12878CtcfUniPk.narrowPeak.gz",
+                "DNase": "wgEncodeAwgDnaseUwdukeGm12878UniPk.narrowPeak.gz",
+                "H3K27ac": "wgEncodeBroadHistoneGm12878H3k27acStdPk.broadPeak.gz",
+                "H3K27me3": "wgEncodeBroadHistoneGm12878H3k27me3StdPkV2.broadPeak.gz",
+                "H3K36me3": "wgEncodeBroadHistoneGm12878H3k36me3StdPk.broadPeak.gz",
+                "H3K4me1": "wgEncodeBroadHistoneGm12878H3k04me1StdPkV2.broadPeak.gz",
+                "H3K4me2": "wgEncodeBroadHistoneGm12878H3k4me2StdPk.broadPeak.gz",
+                "H3K4me3": "wgEncodeBroadHistoneGm12878H3k04me3StdPkV2.broadPeak.gz",
+                "H3K79me2": "wgEncodeBroadHistoneGm12878H3k79me2StdPk.broadPeak.gz",
+                "H3K9ac": "wgEncodeBroadHistoneGm12878H3k9acStdPk.broadPeak.gz",
+                "H3K9me3": "wgEncodeBroadHistoneGm12878H3k9me3StdPk.broadPeak.gz",
+                "H4K20me1": "wgEncodeBroadHistoneGm12878H4k20me1StdPk.broadPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsHaibGm12878Pol2Pcr2xUniPk.narrowPeak.gz"
+            },
+        "HUVEC": {
+                "CTCF": "wgEncodeAwgTfbsBroadHuvecCtcfUniPk.narrowPeak.gz",
+                "DNase": "wgEncodeAwgDnaseUwdukeHuvecUniPk.narrowPeak.gz",
+                "H3K27ac": "E122-H3K27ac.narrowPeak.gz",
+                "H3K27me3": "E122-H3K27me3.narrowPeak.gz",
+                "H3K36me3": "E122-H3K36me3.narrowPeak.gz",
+                "H3K4me1": "E122-H3K4me1.narrowPeak.gz",
+                "H3K4me2": "E122-H3K4me2.narrowPeak.gz",
+                "H3K4me3": "E122-H3K4me3.narrowPeak.gz",
+                "H3K79me2": "E122-H3K79me2.narrowPeak.gz",
+                "H3K9ac": "E122-H3K9ac.narrowPeak.gz",
+                "H3K9me3": "E122-H3K9me3.narrowPeak.gz",
+                "H4K20me1": "E122-H4K20me1.narrowPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsSydhHuvecPol2UniPk.narrowPeak.gz"
+            },
+        "HeLaS3": {
+                "CTCF": "wgEncodeAwgTfbsBroadHelas3CtcfUniPk.narrowPeak.gz",
+                "DNase": "wgEncodeAwgDnaseUwdukeHelas3UniPk.narrowPeak.gz",
+                "H3K27ac": "wgEncodeBroadHistoneHelas3H3k27acStdPk.broadPeak.gz",
+                "H3K27me3": "wgEncodeBroadHistoneHelas3H3k27me3StdPk.broadPeak.gz",
+                "H3K36me3": "wgEncodeBroadHistoneHelas3H3k36me3StdPk.broadPeak.gz",
+                "H3K4me1": "wgEncodeBroadHistoneHelas3H3k04me1StdPk.broadPeak.gz",
+                "H3K4me2": "wgEncodeBroadHistoneHelas3H3k4me2StdPk.broadPeak.gz",
+                "H3K4me3": "wgEncodeBroadHistoneHelas3H3k4me3StdPk.broadPeak.gz",
+                "H3K79me2": "wgEncodeBroadHistoneHelas3H3k79me2StdPk.broadPeak.gz",
+                "H3K9ac": "wgEncodeBroadHistoneHelas3H3k9acStdPk.broadPeak.gz",
+                "H3K9me3": "wgEncodeBroadHistoneHelas3H3k09me3Pk.broadPeak.gz",
+                "H4K20me1": "wgEncodeBroadHistoneHelas3H4k20me1StdPk.broadPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsHaibHelas3Pol2Pcr1xUniPk.narrowPeak.gz"
+            },
+        "HeLa-S3": {
+                "CTCF": "wgEncodeAwgTfbsBroadHelas3CtcfUniPk.narrowPeak.gz",
+                "DNase": "wgEncodeAwgDnaseUwdukeHelas3UniPk.narrowPeak.gz",
+                "H3K27ac": "wgEncodeBroadHistoneHelas3H3k27acStdPk.broadPeak.gz",
+                "H3K27me3": "wgEncodeBroadHistoneHelas3H3k27me3StdPk.broadPeak.gz",
+                "H3K36me3": "wgEncodeBroadHistoneHelas3H3k36me3StdPk.broadPeak.gz",
+                "H3K4me1": "wgEncodeBroadHistoneHelas3H3k04me1StdPk.broadPeak.gz",
+                "H3K4me2": "wgEncodeBroadHistoneHelas3H3k4me2StdPk.broadPeak.gz",
+                "H3K4me3": "wgEncodeBroadHistoneHelas3H3k4me3StdPk.broadPeak.gz",
+                "H3K79me2": "wgEncodeBroadHistoneHelas3H3k79me2StdPk.broadPeak.gz",
+                "H3K9ac": "wgEncodeBroadHistoneHelas3H3k9acStdPk.broadPeak.gz",
+                "H3K9me3": "wgEncodeBroadHistoneHelas3H3k09me3Pk.broadPeak.gz",
+                "H4K20me1": "wgEncodeBroadHistoneHelas3H4k20me1StdPk.broadPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsHaibHelas3Pol2Pcr1xUniPk.narrowPeak.gz"
+            },
+        "IMR90": {
+                "CTCF": "wgEncodeAwgTfbsSydhImr90CtcfbIggrabUniPk.narrowPeak.gz",
+                "DNase": "E017-DNase.macs2.narrowPeak.gz",
+                "H3K27ac": "E017-H3K27ac.narrowPeak.gz",
+                "H3K27me3": "E017-H3K27me3.narrowPeak.gz",
+                "H3K36me3": "E017-H3K36me3.narrowPeak.gz",
+                "H3K4me1": "E017-H3K4me1.narrowPeak.gz",
+                "H3K4me2": "E017-H3K4me2.narrowPeak.gz",
+                "H3K4me3": "E017-H3K4me3.narrowPeak.gz",
+                "H3K79me2": "E017-H3K79me2.narrowPeak.gz",
+                "H3K9ac": "E017-H3K9ac.narrowPeak.gz",
+                "H3K9me3": "E017-H3K9me3.narrowPeak.gz",
+                "H4K20me1": "E017-H4K20me1.narrowPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsSydhImr90Pol2IggrabUniPk.narrowPeak.gz"
+            },
+        "K562": {
+                "CTCF": "wgEncodeAwgTfbsHaibK562CtcfcPcr1xUniPk.narrowPeak.gz",
+                "DNase": "wgEncodeAwgDnaseUwdukeK562UniPk.narrowPeak.gz",
+                "H3K27ac": "wgEncodeBroadHistoneK562H3k27acStdPk.broadPeak.gz",
+                "H3K27me3": "wgEncodeBroadHistoneK562H3k27me3StdPk.broadPeak.gz",
+                "H3K36me3": "wgEncodeBroadHistoneK562H3k36me3StdPk.broadPeak.gz",
+                "H3K4me1": "wgEncodeBroadHistoneK562H3k4me1StdPk.broadPeak.gz",
+                "H3K4me2": "wgEncodeBroadHistoneK562H3k4me2StdPk.broadPeak.gz",
+                "H3K4me3": "wgEncodeBroadHistoneK562H3k4me3StdPk.broadPeak.gz",
+                "H3K79me2": "wgEncodeBroadHistoneK562H3k79me2StdPk.broadPeak.gz",
+                "H3K9ac": "wgEncodeBroadHistoneK562H3k9acStdPk.broadPeak.gz",
+                "H3K9me3": "wgEncodeBroadHistoneK562H3k9me3StdPk.broadPeak.gz",
+                "H4K20me1": "wgEncodeBroadHistoneK562H4k20me1StdPk.broadPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsHaibK562Pol2V0416101UniPk.narrowPeak.gz"
+            },
+        "NHEK": {
+                "CTCF": "wgEncodeAwgTfbsBroadNhekCtcfUniPk.narrowPeak.gz",
+                "DNase": "E127-DNase.macs2.narrowPeak.gz",
+                "H3K27ac": "E127-H3K27ac.narrowPeak.gz",
+                "H3K27me3": "E127-H3K27me3.narrowPeak.gz",
+                "H3K36me3": "E127-H3K36me3.narrowPeak.gz",
+                "H3K4me1": "E127-H3K4me1.narrowPeak.gz",
+                "H3K4me2": "E127-H3K4me2.narrowPeak.gz",
+                "H3K4me3": "E127-H3K4me3.narrowPeak.gz",
+                "H3K79me2": "E127-H3K79me2.narrowPeak.gz",
+                "H3K9ac": "E127-H3K9ac.narrowPeak.gz",
+                "H3K9me3": "E127-H3K9me3.narrowPeak.gz",
+                "H4K20me1": "E127-H4K20me1.narrowPeak.gz",
+                "POLR2A": "wgEncodeAwgTfbsBroadNhekPol2bUniPk.narrowPeak.gz"
+        },
+        "Liver": {
+            "CTCF": "ENCFF690BYG.bed.gz"
+        },
+        "Pancreas": {
+            "CTCF": "ENCFF867ERM.bed.gz"
+        },
+        "Ovary": {
+            "CTCF": "ENCFF261BWI.bed.gz"
+        },
+        "LeftVentricle": {
+            "CTCF": "ENCFF541DBX.bed.gz"
+        },
+        "SigmoidColon": {
+            "CTCF": "ENCFF637HAC.bed.gz"
+        },
+        "Stomach": {
+            "CTCF": "ENCFF379CDW.bed.gz"
+        },
+        "Spleen": {
+            "CTCF": "ENCFF460UPQ.bed.gz"
+        },
+        "Lung": {
+            "CTCF": "ENCFF694SEF.bed.gz"
+        }
+    },
+    "scaling_params": {
+        "use_celltypes": ["GM12878", "K562", "IMR90", "HeLa-S3"],
+        "max": {
+            "CTCF": 687.571731083574,
+            "DNase": 66284.0,
+            "H3K27ac": 6205.813131,
+            "H3K27me3": 1145.578748,
+            "H3K36me3": 1346.381143,
+            "H3K4me1": 822.147868,
+            "H3K4me2": 739.041407,
+            "H3K4me3": 860.330115,
+            "H3K79me2": 1489.655482,
+            "H3K9ac": 905.656269,
+            "H3K9me3": 2710.827847,
+            "H4K20me1": 1178.171329,
+            "POLR2A": 863.8198966252029
+        }
+    }
+}

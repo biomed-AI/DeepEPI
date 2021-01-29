@@ -10,7 +10,7 @@ import warnings
 import torch
 import matplotlib.pyplot as plt
 
-import biock.biock as biock
+import biock
 
 np.random.seed(0)
 torch.manual_seed(0)

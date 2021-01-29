@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import EPI_misc
 from idle_gpu import idle_gpu
 from EPI_misc import max_indexes, min_indexes, evaluate_results, tensor2numpy
-from EPIGL import EPIGL
+from model import EPIGL
 import prepare_data
 
 def model_summary(model):

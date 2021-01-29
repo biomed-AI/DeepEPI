@@ -10,22 +10,39 @@ This repository contains the scripts, data, and trained models for DeepEPI. Deep
 
 # Data preparation
 
-- CTCF data in narrowPeak  
-- DNase-seq data in bigWig
-- H3K27ac ChIP-seq data in bigWig
-- H3K4me3 ChIP-seq data in bigWig
-- H3K4me1 ChIP-seq data in bigWig
+## Genomic data
+    - CTCF data in narrowPeak  
+    - DNase-seq data in bigWig (p-value track)
+    - H3K27ac ChIP-seq data in bigWig (p-value track)
+    - H3K4me3 ChIP-seq data in bigWig (p-value track)
+    - H3K4me1 ChIP-seq data in bigWig (p-value track)
+The users should edit the json files in `config/` to specify the location of these genomic data.
+
 
 # Usage
 
 ```bash
 ./run_deepepi.sh $input $outdir
 ```
+
+- `input`: input file
+- `outdir`: output directory
+
 ## Input
+
+The input file should be formatted as:
+
+```
+    ##CELLTYPE [cell type]
+    ##MODEL [model name]
+    #chrom enhancer promoter
+    chr10 49875920-49876712 50396056-50398056
+    chr10	49874816-49877816	49874816-49877816
+```
 
 
 ## Output
-The output will be saved at `$outdir/results`
+The output will be saved at `$outdir/results.txt`
 
 
 ## Demo

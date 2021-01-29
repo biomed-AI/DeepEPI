@@ -1,0 +1,192 @@
+{
+    "location": "/bigdat1/user/chenken/share/RoadmapEpigenomics/nature2015/Processed_Data/ChIP-seq+DNase-seq",
+    "selected": ["DNase"],
+    "dbname": "DNase-pval",
+    "celltypes": {
+        "FetalBrainMale": {
+            "DNase": "E081-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E081-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E081-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E081-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E081-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E081-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "../../Imputed_Data/E081-H3K27ac.imputed.pval.signal.bigwig"
+        },
+        "FetalBrainFemale": {
+            "DNase": "E082-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E082-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E082-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E082-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E082-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E082-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "../../Imputed_Data/E082-H3K27ac.imputed.pval.signal.bigwig"
+        },
+        "Ovary": {
+            "DNase": "E097-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E097-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E097-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E097-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E097-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E097-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E097-H3K27ac.pval.signal.bigwig"
+        },
+        "Pancreas": {
+            "DNase": "E098-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E098-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E098-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E098-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E098-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E098-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E098-H3K27ac.pval.signal.bigwig"
+        },
+        "Stomach": {
+            "DNase": "E092-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E092-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E092-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E092-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E092-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E092-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E092-H3K27ac.pval.signal.bigwig"
+        },
+        "SigmoidColon": {
+            "DNase": "E106-DNase.imputed.pval.signal.bigwig", 
+            "H3K4me1": "E106-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E106-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E106-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E106-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E106-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E106-H3K27ac.pval.signal.bigwig"
+        },
+        "Liver": {
+            "DNase": "E066-DNase.imputed.pval.signal.bigwig", 
+            "H3K4me1": "E066-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E066-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E066-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E066-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E066-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E066-H3K27ac.pval.signal.bigwig"
+        },
+
+        "HMEC": {
+            "DNase": "E119-DNase.pval.signal.bigwig", 
+            "H3K4me1": "E119-H3K4me1.pval.signal.bigwig",
+            "H3K4me3": "E119-H3K4me3.pval.signal.bigwig",
+            "H3K36me3": "E119-H3K36me3.pval.signal.bigwig",
+            "H3K9me3": "E119-H3K9me3.pval.signal.bigwig",
+            "H3K27me3": "E119-H3K27me3.pval.signal.bigwig",
+            "H3K27ac": "E119-H3K27ac.pval.signal.bigwig"
+        },
+        "IMR90": {
+            "DNase": "E017-DNase.pval.signal.bigwig",
+            "H3K27ac": "E017-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E017-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E017-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E017-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E017-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E017-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E017-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E017-H3K9ac.pval.signal.bigwig",
+            "H3K9me1": "E017-H3K9me1.pval.signal.bigwig",
+            "H3K9me3": "E017-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E017-H4K20me1.pval.signal.bigwig"
+        },
+        "GM12878": {
+            "DNase": "E116-DNase.pval.signal.bigwig",
+            "H3K27ac": "E116-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E116-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E116-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E116-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E116-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E116-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E116-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E116-H3K9ac.pval.signal.bigwig",
+            "H3K9me3": "E116-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E116-H4K20me1.pval.signal.bigwig"
+        },
+        "HeLaS3": {
+            "DNase": "E117-DNase.pval.signal.bigwig",
+            "H3K27ac": "E117-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E117-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E117-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E117-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E117-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E117-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E117-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E117-H3K9ac.pval.signal.bigwig",
+            "H3K9me3": "E117-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E117-H4K20me1.pval.signal.bigwig"
+        },
+        "HeLa-S3": {
+            "DNase": "E117-DNase.pval.signal.bigwig",
+            "H3K27ac": "E117-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E117-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E117-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E117-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E117-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E117-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E117-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E117-H3K9ac.pval.signal.bigwig",
+            "H3K9me3": "E117-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E117-H4K20me1.pval.signal.bigwig"
+        },
+        "HUVEC": {
+            "DNase": "E122-DNase.pval.signal.bigwig",
+            "H3K27ac": "E122-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E122-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E122-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E122-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E122-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E122-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E122-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E122-H3K9ac.pval.signal.bigwig",
+            "H3K9me1": "E122-H3K9me1.pval.signal.bigwig",
+            "H3K9me3": "E122-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E122-H4K20me1.pval.signal.bigwig"
+        },
+        "K562": {
+            "DNase": "E123-DNase.pval.signal.bigwig",
+            "H3K27ac": "E123-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E123-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E123-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E123-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E123-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E123-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E123-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E123-H3K9ac.pval.signal.bigwig",
+            "H3K9me3": "E123-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E123-H4K20me1.pval.signal.bigwig"
+        },
+        "NHEK": {
+            "DNase": "E127-DNase.pval.signal.bigwig",
+            "H3K27ac": "E127-H3K27ac.pval.signal.bigwig",
+            "H3K27me3": "E127-H3K27me3.pval.signal.bigwig",
+            "H3K36me3": "E127-H3K36me3.pval.signal.bigwig",
+            "H3K4me1": "E127-H3K4me1.pval.signal.bigwig",
+            "H3K4me2": "E127-H3K4me2.pval.signal.bigwig",
+            "H3K4me3": "E127-H3K4me3.pval.signal.bigwig",
+            "H3K79me2": "E127-H3K79me2.pval.signal.bigwig",
+            "H3K9ac": "E127-H3K9ac.pval.signal.bigwig",
+            "H3K9me1": "E127-H3K9me1.pval.signal.bigwig",
+            "H3K9me3": "E127-H3K9me3.pval.signal.bigwig",
+            "H4K20me1": "E127-H4K20me1.pval.signal.bigwig"
+        }
+    },
+    "scaling": {
+        "celllines": ["GM12878", "K562", "IMR90", "HeLa-S3"],
+        "max": {
+            "DNase": 204,
+            "H3K4me3": 156,
+            "H3K4me1": 52,
+            "H3K27me3": 41,
+            "H3K9me3": 46,
+            "H3K36me3": 44,
+            "H3K27ac": 192,
+            "H3K9ac": 153,
+            "H3K4me2": 117,
+            "H3K79me2": 90,
+            "H4K20me1": 40
+        }
+    }
+}
+
+

@@ -95,8 +95,7 @@ def predict(model, test_data, device, sample_idxs='all', batch_size=128, evaluat
 def get_args():
     p = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument('-t', "--data_dirs", required=True, nargs='+')
-    p.add_argument('-m', "--model-state", required=True, help="Use model state dict")
-    p.add_argument('-c', "--model-config", required=True, help="Model parameters")
+    p.add_argument('-m', "--model", required=True, choices=("EPI", "LOOP"), help="Use model state dict")
     p.add_argument('-gf', "--global-features", default=["segment.mark_3", "segment.ep.pos-encode", "segment.CTCF.arcsinh", "segment.DNase-pval.arcsinh", "segment.H3K27ac-pval.arcsinh", "segment.H3K4me1-pval.arcsinh", "segment.H3K4me3-pval.arcsinh"], nargs='+', help="DeepEPI features")
     p.add_argument('-b', "--batch-size", default=128, type=int, help="batch size")
     p.add_argument('-o', '--output', help="Write prediction", required=True)
@@ -129,7 +128,11 @@ if __name__ == "__main__":
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     print("- Using device: ", device)
 
-    params = json.load(open(args.model_config)) # {"description": xxx, "params": xxx}
+    basedir = os.path.dirname(os.path.dirname(__file__))
+    models = json.load(open(basedir + "/model/models.json"))
+    model_state = "{}/model/{}.model".format(basedir, models[args.model])
+    model_config = "{}/model/{}.json".format(basedir, models[args.model])
+    params = json.load(open(model_config)) # {"description": xxx, "params": xxx}
     params['use_local'] = False
     params['use_global'] = True
     params['s_channel'] = validate_data['segment'].shape[1]
@@ -139,11 +142,11 @@ if __name__ == "__main__":
     model.to(device)
     model.eval()
 
-    print("- Loading model state from {}".format(args.model_state))
+    print("- Loading model state from {}".format(model_state))
     if torch.cuda.is_available():
-        state_dict = torch.load(args.model_state)
+        state_dict = torch.load(model_state)
     else:
-        state_dict = torch.load(args.model_state, map_location=torch.device('cpu'))
+        state_dict = torch.load(model_state, map_location=torch.device('cpu'))
     model.load_state_dict(state_dict['model_state_dict'])
 
     print("- Model\n", model, '\n', model_summary(model))

@@ -28,8 +28,7 @@ ${basedir}/src/prepare_data.py -d $outdir \
    --segment-dist -t 1
 
 ${basedir}/src/predict.py -t $outdir  \
-    -m ./model/GM12878_IMR90_K562_NHEK_chr1_19.model \
-    -c ./model/GM12878_IMR90_K562_NHEK_chr1_19.json \
+    -m EPI \
     -o ${outdir}
 
 # usage: prepare_data.py [-h] -d DATA_DIR --name NAME [--metadata]

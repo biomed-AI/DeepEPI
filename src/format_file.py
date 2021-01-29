@@ -33,7 +33,6 @@ def get_args():
     p.add_argument('input')
     p.add_argument('-o', '--outdir', required=True)
     p.add_argument('--bed-config', nargs='+')
-    p.add_argument('--buildver', default="hg19", choices=('hg19', 'hg38'))
     p.add_argument('--bw-config', nargs='+', default=None)
     p.add_argument('--interval-len', default=3000000, type=int)
     p.add_argument('--cell-config', default="/home/chenken/Documents/DeepEPI/config/celltypes.json")
@@ -58,6 +57,8 @@ if __name__ == "__main__":
                 elif l.startswith("##MODEL"):
                     model_name = l.strip().split()[1]
                     assert model_name.lower() in available_models.keys()
+                elif l.startswith("##BUILDVER"):
+                    buildver = l.strip().split()[1]
             elif l.startswith("#"):
                 continue
             elif len(l.strip()) > 0:
@@ -84,8 +85,8 @@ if __name__ == "__main__":
             mid = (enhancers[i] + promoters[i]) // 2
             if mid - args.interval_len // 2 < 0:
                 shift = args.interval_len - mid
-            elif mid + args.interval_len // 2 >= chrom_size[args.buildver][c]:
-                shift = chrom_size[args.buildver][c] - mid - args.interval_len // 2
+            elif mid + args.interval_len // 2 >= chrom_size[buildver][c]:
+                shift = chrom_size[buildver][c] - mid - args.interval_len // 2
             else:
                 shift = 0
             sl = mid + shift - args.interval_len // 2

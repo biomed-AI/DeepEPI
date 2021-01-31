@@ -35,7 +35,7 @@ The input file should be formatted as:
 ##CELLTYPE [cell type]
 ##BUILDVER [build version]
 #chrom enhancer promoter
-chr10 49875920-49876712 50396056-50398056
+chr10	49875920-49876712	50396056-50398056
 chr10	49874816-49877816	49874816-49877816
 ```
 

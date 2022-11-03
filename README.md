@@ -1,5 +1,8 @@
 # DeepEPI
 
+*This repository is no longer maintained. See [TransEPI](https://github.com/biomed-AI/TransEPI) for updates.*
+
+
 This repository contains the scripts, data, and trained models for DeepEPI. DeepEPI is a deep learning model to predict enhancer-promoter interactions by employing features from large genomic contexts.
 
 ![DeepEPI](./demo/architecture.png)
